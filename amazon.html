@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عبد أمازون - المتجر الشامل للعراق</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background: #f0f2f5; color: #1a1a1a; }
+        .container { max-width: 1300px; margin: 0 auto; background: #fff; }
+        
+        header { background: #232f3e; color: white; padding: 60px 20px; text-align: center; border-bottom: 6px solid #ff9900; }
+        header h1 { color: #ff9900; font-size: 3.5rem; margin-bottom: 10px; }
+        
+        .grid-title { text-align: center; padding: 50px 0 20px; font-size: 2.2rem; color: #232f3e; position: relative; }
+        .grid-title::after { content: ''; width: 100px; height: 4px; background: #ff9900; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
+
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; padding: 40px 20px; }
+        
+        .product-card { border: 1px solid #eee; border-radius: 15px; padding: 25px; text-align: center; transition: 0.3s; cursor: pointer; background: white; box-shadow: 0 4px 6px rgba(0,0,0,0.05); display: flex; flex-direction: column; height: 100%; }
+        .product-card:hover { transform: translateY(-8px); border-color: #ff9900; box-shadow: 0 12px 24px rgba(0,0,0,0.1); }
+        
+        .icon-circle { width: 85px; height: 85px; background: #f8f9fa; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 2.8rem; transition: 0.3s; }
+        .product-card:hover .icon-circle { background: #fff3e0; transform: rotate(10deg); }
+        
+        .product-card h3 { font-size: 1.25rem; margin-bottom: 12px; color: #232f3e; min-height: 40px; }
+        .status-badge { background: #008a00; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; display: inline-block; margin-bottom: 15px; }
+        
+        .whatsapp-btn { background: #25D366; color: white; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: auto; transition: 0.3s; }
+        .whatsapp-btn:hover { background: #128C7E; }
+
+        /* تذييل الصفحة للمصمم عامر */
+        footer { background: #131921; color: white; padding: 60px 20px; text-align: center; margin-top: 60px; }
+        .designer-card { background: rgba(255,153,0,0.1); border: 2px dashed #ff9900; padding: 30px; border-radius: 20px; display: inline-block; }
+        .designer-card h4 { font-size: 1.5rem; color: #ff9900; margin-bottom: 10px; }
+        .dev-link { color: #25D366; text-decoration: none; font-weight: bold; font-size: 1.4rem; display: block; margin-top: 15px; border: 1px solid #25D366; padding: 12px; border-radius: 10px; transition: 0.3s; }
+        .dev-link:hover { background: #25D366; color: white; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>عبد أمازون</h1>
+        <p>متجرك المتكامل للتسوق من أمازون وشحنها إلى العراق</p>
+    </header>
+
+    <h2 class="grid-title">أقسامنا المتوفرة</h2>
+
+    <div class="products-grid">
+        <div class="product-card" onclick="openOrder('كاميرات المراقبة الذكية')">
+            <div class="icon-circle">🛡️</div>
+            <h3>كاميرات مراقبة ذكية (واي فاي)</h3>
+            <span class="status-badge">الأحدث وصولاً</span>
+            <a href="#" class="whatsapp-btn">اطلب عبر الواتساب</a>
+        </div>
+
+        <div class="product-card" onclick="openOrder('الأحذية الرجالية')">
+            <div class="icon-circle">👞</div>
+            <h3>أحذية رجالية ماركات عالمية</h3>
+            <span class="status-badge">موديلات 2025</span>
+            <a href="#" class="whatsapp-btn">استعرض الموديلات</a>
+        </div>
+
+        <div class="product-card" onclick="openOrder('ألعاب الأطفال')">
+            <div class="icon-circle">🧸</div>
+            <h3>ألعاب الأطفال والذكاء</h3>
+            <span class="status-badge">متوفر</span>
+            <a href="#" class="whatsapp-btn">اطلب الآن</a>
+        </div>
+
+        <div class="product-card" onclick="openOrder('المكياجات')">
+            <div class="icon-circle">💄</div>
+            <h3>المكياجات والعناية بالبشرة</h3>
+            <span class="status-badge">ماركات أصلية</span>
+            <a href="#" class="whatsapp-btn">اطلب الآن</a>
+        </div>
+
+        <div class="product-card" onclick="openOrder('مجلس دايسون')">
+            <div class="icon-circle">🌀</div>
+            <h3>مجلس دايسون (Airwrap)</h3>
+            <span class="status-badge">متوفر</span>
+            <a href="#" class="whatsapp-btn">اطلب الآن</a>
+        </div>
+
+        <div class="product-card" onclick="openOrder('ليزر فيليبس')">
+            <div class="icon-circle">⚡</div>
+            <h3>ليزر فيليبس لوميا الأصلي</h3>
+            <span class="status-badge">متوفر</span>
+            <a href="#" class="whatsapp-btn">اطلب الآن</a>
+        </div>
+
+        <div class="product-card" onclick="openOrder('ماكينة ويل')">
+            <div class="icon-circle">💈</div>
+            <h3>ماكينة حلاقة Wahl الأصلية</h3>
+            <span class="status-badge">متوفر</span>
+            <a href="#" class="whatsapp-btn">اطلب الآن</a>
+        </div>
+
+        <div class="product-card" onclick="openOrder('جهاز القهوة')">
+            <div class="icon-circle">☕</div>
+            <h3>أجهزة وماكينات القهوة</h3>
+            <span class="status-badge">متوفر</span>
+            <a href="#" class="whatsapp-btn">اطلب الآن</a>
+        </div>
+
+        <div class="product-card" onclick="openOrder('الشنط النسائية')">
+            <div class="icon-circle">👜</div>
+            <h3>شنط نسائية ماركات عالمية</h3>
+            <span class="status-badge">متوفر</span>
+            <a href="#" class="whatsapp-btn">اطلب الآن</a>
+        </div>
+
+        <div class="product-card" onclick="openOrder('سماعات بلوتوث')">
+            <div class="icon-circle">🎧</div>
+            <h3>سماعات بلوتوث وسماعات رأس</h3>
+            <span class="status-badge">متوفر</span>
+            <a href="#" class="whatsapp-btn">اطلب الآن</a>
+        </div>
+
+        <div class="product-card" onclick="openOrder('العطورات')">
+            <div class="icon-circle">🌬️</div>
+            <h3>عطورات أصلية عالمية</h3>
+            <span class="status-badge">متوفر</span>
+            <a href="#" class="whatsapp-btn">اطلب الآن</a>
+        </div>
+
+        <div class="product-card" onclick="openOrder('أدوات لابتوب')">
+            <div class="icon-circle">💻</div>
+            <h3>أدوات وإكسسوارات اللابتوب</h3>
+            <span class="status-badge">متوفر</span>
+            <a href="#" class="whatsapp-btn">اطلب الآن</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="designer-card">
+            <h4>لإنشاء وتطوير موقع إلكتروني احترافي</h4>
+            <p>المصمم والمبرمج: <strong>عامر عمران</strong></p>
+            <a href="https://wa.me/9647506619617" class="dev-link">
+                📲 تواصل معي: 07506619617
+            </a>
+        </div>
+        <p style="margin-top: 40px; opacity: 0.6; font-size: 0.9rem;">
+            جميع الحقوق محفوظة لـ عبد أمازون © 2025
+        </p>
+    </footer>
+</div>
+
+<script>
+    // وظيفة تحويل الزبون لرقم المبيعات الخاص بالمتجر
+    function openOrder(category) {
+        const salesNumber = "9647518514521";
+        const message = encodeURIComponent("مرحباً عبد أمازون، أريد الاستفسار عن متوفر قسم: " + category);
+        window.open("https://wa.me/" + salesNumber + "?text=" + message, '_blank');
+    }
+
+    // منع تداخل النقر
+    document.querySelectorAll('.whatsapp-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const categoryName = btn.parentElement.querySelector('h3').innerText;
+            openOrder(categoryName);
+        });
+    });
+</script>
+
+</body>
+</html>
